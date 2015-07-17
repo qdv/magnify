@@ -13,6 +13,7 @@
     var oSettings = $.extend({
         /* Default options */
         debug: false,
+		innerContent: '',
         speed: 100
       }, oOptions),
       $anchor,
@@ -53,7 +54,7 @@
             if ($image.prev('.magnify-lens').length) {
               $container.children('.magnify-lens').css('background-image', 'url(' + sImgSrc + ')');
             } else {
-              $image.before('<div class="magnify-lens loading" style="background:url(' + sImgSrc + ') no-repeat 0 0"></div>');
+              $image.before('<div class="magnify-lens loading" style="background:url(' + sImgSrc + ') no-repeat 0 0">' + oSettings.innerContent + '</div>');
             }
             $lens = $container.children('.magnify-lens');
 
